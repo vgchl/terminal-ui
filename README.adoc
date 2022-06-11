@@ -1,0 +1,3 @@
+# terminal-ui
+
+A small and simple collection of utils to make scripts look a bit better.
