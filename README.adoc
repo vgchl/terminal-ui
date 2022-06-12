@@ -4,10 +4,10 @@ A small and simple collection of utils to make scripts look a bit better.
 
 ## Installation
 
-### Docker
+### Running with Docker
 You can run terminal-ui with docker. It's simple but not so performant. Run:
 ```
-  docker run --rm terminal-ui header --title "Example with Docker"
+  docker run --rm vgchl/terminal-ui header --title "Example with Docker"
 ```
 To improve performance, you can detect if go is installed, and use it as a fallback:
 ```
@@ -15,13 +15,13 @@ To improve performance, you can detect if go is installed, and use it as a fallb
     go install github.com/vgchl/terminal-ui
     terminal_ui=$(go env GOPATH)/bin/terminal-ui
   else
-    terminal_ui="docker run -t --rm terminal-ui"
+    terminal_ui="docker run -t --rm vgchl/terminal-ui"
   fi
 
   $terminal-ui header --title "Example with Go"
 ```
 
-### Go
+### Running with Go
 Usage with `go run`:
 ```
   go run github.com/vgchl/terminal-ui header --title "Example with Go"
