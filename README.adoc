@@ -5,11 +5,11 @@ A small and simple collection of utils to make scripts look a bit better.
 ## Installation
 
 ### Docker
-Simple, but less performant. Simply run:
+You can run terminal-ui with docker. It's simple but not so performant. Run:
 ```
   docker run --rm terminal-ui header --title "Example with Docker"
 ```
-Using go when available (much faster):
+To improve performance, you can detect if go is installed, and use it as a fallback:
 ```
   if command -v go &> /dev/null; then
     go install github.com/vgchl/terminal-ui
@@ -22,11 +22,11 @@ Using go when available (much faster):
 ```
 
 ### Go
-Simple but less performant:
+Usage with `go run`:
 ```
   go run github.com/vgchl/terminal-ui header --title "Example with Go"
 ```
-More complicated, but faster:
+Alternatively, install and directly call the binary for better performance:
 ```
   go install github.com/vgchl/terminal-ui
   terminal_ui=$(go env GOPATH)/bin/terminal-ui
@@ -37,6 +37,7 @@ More complicated, but faster:
 ## UI Elements
 
 ### Header
+Example:
 ```
 terminal-ui header Example
 
@@ -51,6 +52,7 @@ terminal-ui header Example
 ### Alerts
 Prints an alert with a colored label.
 
+Example:
 ```
 terminal-ui alert-done Some description
 terminal-ui alert-info Some description
