@@ -1,3 +1,60 @@
 # terminal-ui
 
 A small and simple collection of utils to make scripts look a bit better.
+
+## Installation
+
+### Docker
+Simple, but less performant. Simply run:
+```
+  docker run --rm terminal-ui header --title "Example with Docker"
+```
+Using go when available (much faster):
+```
+  if command -v go &> /dev/null; then
+    go install github.com/vgchl/terminal-ui
+    terminal_ui=$(go env GOPATH)/bin/terminal-ui
+  else
+    terminal_ui="docker run -t --rm terminal-ui"
+  fi
+
+  $terminal-ui header --title "Example with Go"
+```
+
+### Go
+Simple but less performant:
+```
+  go run github.com/vgchl/terminal-ui header --title "Example with Go"
+```
+More complicated, but faster:
+```
+  go install github.com/vgchl/terminal-ui
+  terminal_ui=$(go env GOPATH)/bin/terminal-ui
+
+  $terminal-ui header --title "Example with Go"
+```
+
+## UI Elements
+
+### Header
+```
+terminal-ui header Example
+
+┏━━━━━━━━━━━━━┓
+┃   Example   ┃
+┗━━━━━━━━━━━━━┛
+```
+
+--title:: Creates a larger box
+--style:: string The box style (heavy, light, double, flat)
+
+### Alerts
+Prints an alert with a colored label.
+
+```
+terminal-ui alert-done Some description
+terminal-ui alert-info Some description
+terminal-ui alert-warn Some description
+terminal-ui alert-error Some description
+```
+
